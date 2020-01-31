@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <p class="card-text bold">
+        List of User within 100KM area from Dublin
+      </p>
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">User ID</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Distance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of nearByUser">
+        <td>{{ user.user.user_id }}</td>
+        <td>{{ user.user.name }}</td>
+        <th scope="row">{{ user.dis | number: "1.2-2" }} km</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
